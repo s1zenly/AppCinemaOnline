@@ -1,6 +1,10 @@
 import ru.hse.sema.homework.fronted.handler.CustomerHandler
+import ru.hse.sema.homework.fronted.handler.ServerRequestHandler
 import java.time.format.DateTimeFormatter
 
+/**
+ * Singleton class with global values
+ */
 object GlobalSingletonData {
     const val COUNT_COMMAND: Int = 12
     const val COLOR_RED_HEAD: String = "\u001B[31m"
@@ -13,8 +17,9 @@ object GlobalSingletonData {
     const val FILE_NAME_TICKETS: String = "tickets.json"
 
 
+    val serverRequestHandler: ServerRequestHandler = ServerRequestHandler
     val customerHandler: CustomerHandler = CustomerHandler
-    val formatterDateTime = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
+    val formatterDateTime = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")!!
 
     private var singleton: Boolean = false
     private var length: Int = 0

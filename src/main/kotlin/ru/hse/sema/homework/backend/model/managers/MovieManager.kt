@@ -6,6 +6,9 @@ import ru.hse.sema.homework.backend.backendGlobalData
 import ru.hse.sema.homework.backend.model.data.Movie
 import ru.hse.sema.homework.backend.model.enums.SerializationPath
 
+/**
+ * Singleton class which processes movie commands
+ */
 object MovieManager {
 
     fun addFilms(movie: Movie): Pair<Movie?, String?> {

@@ -1,6 +1,8 @@
 package ru.hse.sema.homework.backend.handler
 
 import actionsCinema.ActionsCinema
+import exсeptions.IncorrectDatabaseIsEmpty
+import exсeptions.IncorrectExistenceSession
 import ru.hse.sema.homework.backend.backendGlobalData
 import ru.hse.sema.homework.backend.model.data.Session
 
@@ -30,6 +32,15 @@ object CinemaHandler {
             sessionSecond = backendGlobalData.converterDataInEntity.getCorrectSession(data.subList(data.size / 2, data.size))
             if(sessionFirst is String) return Pair(null, sessionFirst.toString())
             if(sessionSecond is String) return Pair(null, sessionSecond.toString())
+
+            try {
+                if(backendGlobalData.databaseSessions.getListSessionRead.isEmpty()) throw IncorrectDatabaseIsEmpty()
+                if(backendGlobalData.databaseSessions.getListSessionRead.filter { it == sessionFirst }.firstOrNull() == null) throw IncorrectExistenceSession()
+            } catch (e: IncorrectDatabaseIsEmpty) {
+                return Pair(null, e.message)
+            } catch (e: IncorrectExistenceSession) {
+                return Pair(null, e.message)
+            }
 
         } else {
             session = backendGlobalData.converterDataInEntity.getCorrectSession(data)
@@ -82,9 +93,18 @@ object CinemaHandler {
             ActionsCinema.GET_LIST_SESSIONS -> backendGlobalData.databaseManager.getListSession()
             ActionsCinema.GET_LIST_MOVIES -> backendGlobalData.databaseManager.getListMovies()
             ActionsCinema.GET_LIST_TICKETS -> {
+
                 var session = backendGlobalData.converterDataInEntity.getCorrectSession(data!!)
 
                 if(session is String) return Pair(null, session.toString())
+
+                if(backendGlobalData.databaseFilms.getListFilmsRead.isEmpty()) {
+                    try {
+                        throw IncorrectDatabaseIsEmpty()
+                    } catch (e: IncorrectDatabaseIsEmpty) {
+                        return Pair(null, e.message)
+                    }
+                }
 
                 session = backendGlobalData.databaseSessions.getListSessionRead.filter { it.equals(session) }.first()
 

@@ -13,6 +13,9 @@ import ru.hse.sema.homework.backend.model.enums.SerializationPath
 import java.awt.Color
 import java.util.Collections
 
+/**
+ * Singleton class which processes ticket commands
+ */
 object TicketManager {
 
     fun addTicket(ticket: Ticket): Pair<Ticket?, String?> {

@@ -9,6 +9,9 @@ import ru.hse.sema.homework.backend.model.database.DatabaseSessions
 import ru.hse.sema.homework.backend.model.managers.*
 import ru.hse.sema.homework.backend.view.ViewColorText
 
+/**
+ * Singleton class with global values for backend part the program
+ */
 object BackendSingletonData {
     val databaseFilms: DatabaseFilms = DatabaseFilms
     val databaseSessions: DatabaseSessions = DatabaseSessions

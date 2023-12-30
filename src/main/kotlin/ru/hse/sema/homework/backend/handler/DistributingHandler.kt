@@ -3,6 +3,9 @@ package ru.hse.sema.homework.backend.handler
 import actionsCinema.ActionsCinema
 import ru.hse.sema.homework.backend.backendGlobalData
 
+/**
+ * Global backend handler
+ */
 object DistributingHandler {
 
     fun distributingRequest(action: ActionsCinema, data: List<String?>?): Pair<Any?, String?> {

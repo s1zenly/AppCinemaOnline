@@ -5,6 +5,12 @@ import globalData
 import java.time.LocalDateTime
 import java.time.format.DateTimeParseException
 
+
+/**
+ * Singleton class which verifies the correctness of the input data
+ *
+ * functions returns message about error. If message == null -> There are no mistakes
+ */
 object CheckerCorrectData {
 
     fun isCorrectTicket(list: List<String?>): String?  {

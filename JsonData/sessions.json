@@ -1,17 +1,9 @@
 [ {
   "movie" : {
     "name" : "Hello",
-    "style" : "Horror",
-    "duration" : 1.2,
+    "style" : "q",
+    "duration" : 1.1,
     "info" : ""
   },
-  "date" : "12.12.2024 12:12"
-}, {
-  "movie" : {
-    "name" : "Hello",
-    "style" : "Horror",
-    "duration" : 1.2,
-    "info" : ""
-  },
-  "date" : "12.12.2024 14:12"
+  "date" : "24.12.2024 12:14"
 } ]

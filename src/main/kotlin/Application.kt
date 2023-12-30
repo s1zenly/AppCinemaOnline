@@ -1,7 +1,13 @@
 
+
+/**
+ * Global variable which gives access to global data
+ */
 var globalData: GlobalSingletonData = GlobalSingletonData
 
-// Start app
+/**
+ * Start program
+ */
 fun main() {
     start()
 }

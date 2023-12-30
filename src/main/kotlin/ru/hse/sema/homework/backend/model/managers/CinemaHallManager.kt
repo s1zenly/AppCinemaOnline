@@ -9,6 +9,9 @@ import ru.hse.sema.homework.backend.model.data.Ticket
 import ru.hse.sema.homework.backend.model.enums.Colors
 import java.awt.Color
 
+/**
+ * Singleton class which processes cinema hall commands
+ */
 object CinemaHallManager {
 
     fun displayHall(session: Session): Pair<Array<Array<String>>?, String?> {

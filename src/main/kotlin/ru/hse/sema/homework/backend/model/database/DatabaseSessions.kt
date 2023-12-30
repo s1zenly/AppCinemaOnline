@@ -1,11 +1,7 @@
 package ru.hse.sema.homework.backend.model.database
 
-import exсeptions.IncorrectCreateSession
-import exсeptions.IncorrectDateTime
-import exсeptions.IncorrectExistenceSession
-import ru.hse.sema.homework.backend.model.data.CinemaHall
 import ru.hse.sema.homework.backend.model.data.Session
-import java.time.LocalDateTime
+
 
 object DatabaseSessions {
 

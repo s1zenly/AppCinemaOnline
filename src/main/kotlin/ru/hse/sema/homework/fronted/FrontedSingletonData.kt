@@ -9,6 +9,9 @@ import ru.hse.sema.homework.fronted.view.ViewList
 import ru.hse.sema.homework.fronted.view.ViewMenuCapabilities
 import ru.hse.sema.homework.fronted.view.ViewResult
 
+/**
+ * Singleton class with global values for fronted part the program
+ */
 object FrontedSingletonData {
     val clientInfoReader: ClientInfoReader = ClientInfoReader
     val checkerCorrectData: CheckerCorrectData = CheckerCorrectData

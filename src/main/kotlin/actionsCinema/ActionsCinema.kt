@@ -1,5 +1,8 @@
 package actionsCinema
 
+/**
+ * Options cinema
+ */
 enum class ActionsCinema {
     BUY_TICKET,
     RETURN_TICKET,

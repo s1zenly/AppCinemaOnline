@@ -10,6 +10,10 @@ import ru.hse.sema.homework.backend.model.database.DatabaseSessions
 import ru.hse.sema.homework.backend.model.enums.SerializationPath
 import java.time.LocalDateTime
 
+
+/**
+ * Singleton class which processes session commands
+ */
 object SessionManager {
 
     fun createSession(session: Session): Pair<Session?, String?> {

@@ -1,15 +1,17 @@
 package ru.hse.sema.homework.backend.model.converter
 
 import exсeptions.IncorrectExistenceFilm
-import exсeptions.IncorrectExistenceSession
 import globalData
 import ru.hse.sema.homework.backend.backendGlobalData
 import ru.hse.sema.homework.backend.model.data.Movie
 import ru.hse.sema.homework.backend.model.data.Session
 import ru.hse.sema.homework.backend.model.data.Ticket
-import ru.hse.sema.homework.fronted.model.ConverterData
 import java.time.LocalDateTime
 
+
+/**
+ * Converts a list of data into an object
+ */
 object ConvertDataInEntity {
 
     fun getCorrectTicket(list: List<String?>): Ticket {

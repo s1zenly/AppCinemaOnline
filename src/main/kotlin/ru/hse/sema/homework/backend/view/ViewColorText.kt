@@ -2,7 +2,9 @@ package ru.hse.sema.homework.backend.view
 
 import globalData
 
-
+/**
+ * Singleton class displays colored text
+ */
 object ViewColorText {
 
     fun viewRedText(text: String): String {

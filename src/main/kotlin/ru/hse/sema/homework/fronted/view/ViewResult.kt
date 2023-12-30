@@ -6,6 +6,13 @@ import ru.hse.sema.homework.backend.model.data.Ticket
 import actionsCinema.ActionsCinema
 import ru.hse.sema.homework.fronted.frontedGlobalDate
 
+/**
+ * Singleton class which displays the result of program
+ *
+ *
+ *
+ * If action == null, then there is an error in the program -> displays error message
+ */
 object ViewResult {
 
     fun view(action: ActionsCinema?, entity: Any?) {

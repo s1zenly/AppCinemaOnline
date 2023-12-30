@@ -5,6 +5,10 @@ import exсeptions.IncorrectExistenceSession
 import ru.hse.sema.homework.backend.backendGlobalData
 import ru.hse.sema.homework.backend.model.data.Session
 
+
+/**
+ * Singleton class which processes database commands
+ */
 object DatabaseManager {
 
     fun getListSession(): Pair<Any?, String?> {

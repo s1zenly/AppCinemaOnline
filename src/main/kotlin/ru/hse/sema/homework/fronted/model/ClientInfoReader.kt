@@ -1,5 +1,9 @@
 package ru.hse.sema.homework.fronted.model
 
+
+/**
+ * Singleton class which reads customer data
+ */
 object ClientInfoReader {
 
     private const val messageNameFilm: String = "Название фильма: "

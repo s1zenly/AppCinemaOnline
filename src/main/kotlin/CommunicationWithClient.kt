@@ -1,4 +1,7 @@
 
+/**
+ * Start program and reading cinemaHall data
+ */
 fun start() {
     var sizeHall: Pair<Int, Int>? = null
 
@@ -11,6 +14,9 @@ fun start() {
     communicate()
 }
 
+/**
+ * Executes a single user command
+ */
 fun communicate() {
     globalData.customerHandler.menuHandler()
     globalData.customerHandler.commandHandler()
@@ -19,6 +25,9 @@ fun communicate() {
 }
 
 
+/**
+ * Returns one more command to execute or break the program
+ */
 fun end() {
     println("Вы хотите закончить?(y/n)")
     var answer: String = ""

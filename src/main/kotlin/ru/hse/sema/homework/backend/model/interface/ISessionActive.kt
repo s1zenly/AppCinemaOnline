@@ -1,6 +1,8 @@
 package ru.hse.sema.homework.backend.model.`interface`
 
-// Checking for the beginning of the movie
+/**
+ * Checking for the beginning of the movie
+ */
 interface ISessionActive {
     var started: Boolean
 

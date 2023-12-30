@@ -7,6 +7,9 @@ import globalData
 import java.io.IOException
 import java.time.LocalDateTime
 
+/**
+ * Overrides the representation of the date and time format
+ */
 object LocalDateTimeSerializer : JsonSerializer<LocalDateTime>() {
 
     @Throws(IOException::class)

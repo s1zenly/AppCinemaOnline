@@ -1,5 +1,9 @@
 package ru.hse.sema.homework.fronted.view
 
+
+/**
+ * Singleton class which displays commands menu
+ */
 object ViewMenuCapabilities {
 
     fun view() = println("1 - Добавить проданный билет\n" +
