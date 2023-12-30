@@ -1,0 +1,17 @@
+[ {
+  "movieName" : "Hello",
+  "date" : "12.12.2024 12:12",
+  "duration" : 1.2,
+  "seat" : {
+    "first" : 2,
+    "second" : 2
+  }
+}, {
+  "movieName" : "Hello",
+  "date" : "12.12.2024 14:12",
+  "duration" : 1.2,
+  "seat" : {
+    "first" : 3,
+    "second" : 3
+  }
+} ]

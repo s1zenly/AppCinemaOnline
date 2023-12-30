@@ -3,7 +3,7 @@ fun start() {
     var sizeHall: Pair<Int, Int>? = null
 
     while(sizeHall == null) {
-        sizeHall = globalData.getCustomerHandler.cinemaHallHandler()
+        sizeHall = globalData.customerHandler.cinemaHallHandler()
     }
 
     globalData.createCinemaHallData(sizeHall.first, sizeHall.second)
@@ -12,8 +12,8 @@ fun start() {
 }
 
 fun communicate() {
-    globalData.getCustomerHandler.menuHandler()
-    globalData.getCustomerHandler.commandHandler()
+    globalData.customerHandler.menuHandler()
+    globalData.customerHandler.commandHandler()
 
     end()
 }

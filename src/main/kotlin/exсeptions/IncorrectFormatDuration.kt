@@ -8,6 +8,6 @@ class IncorrectFormatDuration(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("Incorrect duration format") + "\n"
 }

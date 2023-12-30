@@ -8,19 +8,19 @@ import performCommand
 object CustomerHandler {
 
     fun ticketHandler(action: ActionsCinema) {
-        val ticket = frontedGlobalDate.getClientInfoReader.ticketReader()
-        val messageCorrectTicket = frontedGlobalDate.getCheckerCorrectData.isCorrectTicket(ticket)
+        val ticket = frontedGlobalDate.clientInfoReader.ticketReader()
+        val messageCorrectTicket = frontedGlobalDate.checkerCorrectData.isCorrectTicket(ticket)
 
         if(messageCorrectTicket != null) {
-            frontedGlobalDate.getViewResult.view(null, messageCorrectTicket)
+            frontedGlobalDate.viewResult.view(null, messageCorrectTicket)
         } else {
 
-            val result = frontedGlobalDate.getDistributingHandler.distributingRequest(action, ticket)
+            val result = frontedGlobalDate.distributingHandler.distributingRequest(action, ticket)
 
             if(result.second != null) {
-                frontedGlobalDate.getViewResult.view(null, result.second)
+                frontedGlobalDate.viewResult.view(null, result.second)
             } else {
-                frontedGlobalDate.getViewResult.view(action, result.first)
+                frontedGlobalDate.viewResult.view(action, result.first)
             }
         }
     }
@@ -28,61 +28,61 @@ object CustomerHandler {
     fun sessionHandler(action: ActionsCinema) {
         var session: List<String?> = listOf()
 
-        val sessionFirst = frontedGlobalDate.getClientInfoReader.sessionReader()
-        val messageCorrectSessionFirst = frontedGlobalDate.getCheckerCorrectData.isCorrectSession(sessionFirst)
+        val sessionFirst = frontedGlobalDate.clientInfoReader.sessionReader()
+        val messageCorrectSessionFirst = frontedGlobalDate.checkerCorrectData.isCorrectSession(sessionFirst)
         var sessionSecond: List<String?> = listOf()
         var messageCorrectSessionSecond: String? = null
 
         if(action == ActionsCinema.CHANGE_SESSION) {
-            sessionSecond = frontedGlobalDate.getClientInfoReader.sessionReader()
-            messageCorrectSessionSecond = frontedGlobalDate.getCheckerCorrectData.isCorrectSession(sessionSecond)
+            sessionSecond = frontedGlobalDate.clientInfoReader.sessionReader()
+            messageCorrectSessionSecond = frontedGlobalDate.checkerCorrectData.isCorrectSession(sessionSecond)
         }
 
         session = sessionFirst + sessionSecond
 
         if(messageCorrectSessionFirst != null) {
-            frontedGlobalDate.getViewResult.view(null, messageCorrectSessionFirst)
+            frontedGlobalDate.viewResult.view(null, messageCorrectSessionFirst)
         } else if(messageCorrectSessionSecond != null) {
-            frontedGlobalDate.getViewResult.view(null, messageCorrectSessionSecond)
+            frontedGlobalDate.viewResult.view(null, messageCorrectSessionSecond)
         } else {
 
-            val result = frontedGlobalDate.getDistributingHandler.distributingRequest(action, session)
+            val result = frontedGlobalDate.distributingHandler.distributingRequest(action, session)
 
             if(result.second != null) {
-                frontedGlobalDate.getViewResult.view(null, result.second)
+                frontedGlobalDate.viewResult.view(null, result.second)
             } else {
-                frontedGlobalDate.getViewResult.view(action, result.first)
+                frontedGlobalDate.viewResult.view(action, result.first)
             }
 
         }
     }
 
     fun movieHandler(action: ActionsCinema) {
-        val movie = frontedGlobalDate.getClientInfoReader.movieReader()
-        val messageCorrectMovie = frontedGlobalDate.getCheckerCorrectData.isCorrectMovie(movie)
+        val movie = frontedGlobalDate.clientInfoReader.movieReader()
+        val messageCorrectMovie = frontedGlobalDate.checkerCorrectData.isCorrectMovie(movie)
 
         if(messageCorrectMovie != null) {
-            frontedGlobalDate.getViewResult.view(null, messageCorrectMovie)
+            frontedGlobalDate.viewResult.view(null, messageCorrectMovie)
         } else {
 
-            val result = frontedGlobalDate.getDistributingHandler.distributingRequest(action, movie)
+            val result = frontedGlobalDate.distributingHandler.distributingRequest(action, movie)
 
             if(result.second != null) {
-                frontedGlobalDate.getViewResult.view(null, result.second)
+                frontedGlobalDate.viewResult.view(null, result.second)
             } else {
-                frontedGlobalDate.getViewResult.view(action, result.first)
+                frontedGlobalDate.viewResult.view(action, result.first)
             }
         }
     }
 
     fun databaseInfoHandler(action: ActionsCinema) {
 
-        val result = frontedGlobalDate.getDistributingHandler.distributingRequest(action, null)
+        val result = frontedGlobalDate.distributingHandler.distributingRequest(action, null)
 
         if(result.second != null) {
-            frontedGlobalDate.getViewResult.view(null, result.second)
+            frontedGlobalDate.viewResult.view(null, result.second)
         } else {
-            frontedGlobalDate.getViewResult.view(action, result.first)
+            frontedGlobalDate.viewResult.view(action, result.first)
         }
     }
 
@@ -90,30 +90,30 @@ object CustomerHandler {
 
 
     fun cinemaHallHandler(): Pair<Int, Int>? {
-        val size = frontedGlobalDate.getClientInfoReader.cinemaHallReader()
-        val messageCorrectSize = frontedGlobalDate.getCheckerCorrectData.isCorrectCinemaHall(size)
+        val size = frontedGlobalDate.clientInfoReader.cinemaHallReader()
+        val messageCorrectSize = frontedGlobalDate.checkerCorrectData.isCorrectCinemaHall(size)
 
         if(messageCorrectSize != null) {
-            frontedGlobalDate.getViewResult.view(null, messageCorrectSize)
+            frontedGlobalDate.viewResult.view(null, messageCorrectSize)
         } else {
-            return frontedGlobalDate.getConverterData.getCorrectCinemaHall(size)
+            return frontedGlobalDate.converterData.getCorrectCinemaHall(size)
         }
 
         return null
     }
 
     fun menuHandler() {
-        frontedGlobalDate.getViewMenuCapabilities.view()
+        frontedGlobalDate.viewMenuCapabilities.view()
     }
 
     fun commandHandler() {
-        val command = frontedGlobalDate.getClientInfoReader.commandReader()
-        val messageCorrectCommand = frontedGlobalDate.getCheckerCorrectData.isCorrectCommand(command)
+        val command = frontedGlobalDate.clientInfoReader.commandReader()
+        val messageCorrectCommand = frontedGlobalDate.checkerCorrectData.isCorrectCommand(command)
 
         if(messageCorrectCommand != null) {
-            frontedGlobalDate.getViewResult.view(null, messageCorrectCommand)
+            frontedGlobalDate.viewResult.view(null, messageCorrectCommand)
         } else {
-            performCommand(frontedGlobalDate.getConverterData.getCorrectCommand(command))
+            performCommand(frontedGlobalDate.converterData.getCorrectCommand(command))
         }
     }
 

@@ -8,7 +8,7 @@ import ru.hse.sema.homework.backend.model.data.Session
 object DatabaseManager {
 
     fun getListSession(): Pair<Any?, String?> {
-        val dataList = backendGlobalData.getDatabaseSessions.getListSessionRead
+        val dataList = backendGlobalData.databaseSessions.getListSessionRead
         val answer = try {
             if(dataList.isEmpty()) throw IncorrectDatabaseIsEmpty()
 
@@ -21,7 +21,7 @@ object DatabaseManager {
     }
 
     fun getListMovies(): Pair<Any?, String?> {
-        val dataList = backendGlobalData.getDatabaseFilms.getListFilmsRead
+        val dataList = backendGlobalData.databaseFilms.getListFilmsRead
         val answer = try {
             if(dataList.isEmpty()) throw IncorrectDatabaseIsEmpty()
 
@@ -34,7 +34,7 @@ object DatabaseManager {
     }
 
     fun getListTickets(session: Session): Pair<Any?, String?> {
-        val dataList = session.getTicketList
+        val dataList = session.ticketList
         val answer = try {
             if(dataList.isEmpty()) throw IncorrectDatabaseIsEmpty()
 

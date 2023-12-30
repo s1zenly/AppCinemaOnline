@@ -1,16 +1,15 @@
 package ru.hse.sema.homework.backend.model.data
 
-data class Movie(
-    private val name: String,
-    private val style: String,
-    private val duration: Double,
-    private val info: String?
-) {
-    val getName: String
-        get() = name
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonProperty
 
-    val getDuration: Double
-        get() = duration
+
+data class Movie(
+    val name: String,
+    val style: String,
+    val duration: Double,
+    val info: String?
+) {
 
     override fun toString(): String {
         return "Movie: ${name}\n" +
@@ -20,7 +19,7 @@ data class Movie(
     }
 
     override fun equals(other: Any?): Boolean {
-        return this.getName == (other as Movie).getName
+        return this.name == (other as Movie).name
     }
 
 }

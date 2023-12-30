@@ -8,6 +8,6 @@ class IncorrectDatabaseIsEmpty(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("Database is empty") + "\n"
 }

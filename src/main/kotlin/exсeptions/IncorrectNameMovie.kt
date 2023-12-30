@@ -8,6 +8,6 @@ class IncorrectNameMovie(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("Incorrect movie name") + "\n"
 }

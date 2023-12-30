@@ -24,12 +24,12 @@ object ViewResult {
                 println("---------------------------------------")
                 println("Посетитель отмечены!")
                 val hall = entity!! as Array<Array<String>>
-                frontedGlobalDate.getViewCinemaHall.view(hall)
+                frontedGlobalDate.viewCinemaHall.view(hall)
             }
             ActionsCinema.DISPLAY_HALL -> {
                 println("---------------------------------------")
                 val hall = entity!! as Array<Array<String>>
-                frontedGlobalDate.getViewCinemaHall.view(hall)
+                frontedGlobalDate.viewCinemaHall.view(hall)
             }
             ActionsCinema.ADD_FILM -> {
                 println("---------------------------------------")
@@ -60,19 +60,19 @@ object ViewResult {
                 val listSession = entity as List<Session>
                 println("Список сеансов:")
                 println("---------------------------------------")
-                frontedGlobalDate.getViewList.view(listSession)
+                frontedGlobalDate.viewList.view(listSession)
             }
             ActionsCinema.GET_LIST_MOVIES -> {
                 val listMovies = entity as List<Movie>
                 println("Список фильмов")
                 println("---------------------------------------")
-                frontedGlobalDate.getViewList.view(listMovies)
+                frontedGlobalDate.viewList.view(listMovies)
             }
             ActionsCinema.GET_LIST_TICKETS -> {
                 val listTickets = entity as List<Ticket>
                 println("Список купленных билетов")
                 println("---------------------------------------")
-                frontedGlobalDate.getViewList.view(listTickets)
+                frontedGlobalDate.viewList.view(listTickets)
             }
 
             else -> println(entity.toString())

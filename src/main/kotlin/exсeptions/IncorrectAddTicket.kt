@@ -8,6 +8,6 @@ class IncorrectAddTicket(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("The ticket is already in the database") + "\n"
 }

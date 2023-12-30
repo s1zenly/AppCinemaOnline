@@ -13,11 +13,11 @@ object CinemaHallManager {
 
     fun displayHall(session: Session): Pair<Array<Array<String>>?, String?> {
         val result = try {
-            if(!backendGlobalData.getSessionManager.checkCorrectSession(session)) throw IncorrectDateTime()
+            if(!backendGlobalData.sessionManager.checkCorrectSession(session)) throw IncorrectDateTime()
 
-            if(!backendGlobalData.getSessionManager.checkSession(session)) throw IncorrectExistenceSession()
+            if(!backendGlobalData.sessionManager.checkSession(session)) throw IncorrectExistenceSession()
 
-            Pair(session.getCinemaHall.getHall, null)
+            Pair(session.cinemaHall.hall, null)
         } catch (e: IncorrectDateTime) {
             Pair(null, e.message)
         } catch (e: IncorrectExistenceSession) {
@@ -29,14 +29,14 @@ object CinemaHallManager {
 
     fun markSeatTaken(ticket: Ticket, session: Session, color: Colors): Array<Array<String>>? {
         val colorSeat = when(color) {
-            Colors.RED -> backendGlobalData.getViewColorText.viewRedText("#")
-            Colors.GREEN -> backendGlobalData.getViewColorText.viewGreenText("#")
-            Colors.YELLOW -> backendGlobalData.getViewColorText.viewYellowText("#")
+            Colors.RED -> backendGlobalData.viewColorText.viewRedText("#")
+            Colors.GREEN -> backendGlobalData.viewColorText.viewGreenText("#")
+            Colors.YELLOW -> backendGlobalData.viewColorText.viewYellowText("#")
         }
 
-        session.getCinemaHall.getHall[ticket.getSeat.first - 1][ticket.getSeat.second - 1] = colorSeat
+        session.cinemaHall.hall[ticket.seat.first - 1][ticket.seat.second - 1] = colorSeat
 
-        return session.getCinemaHall.getHall
+        return session.cinemaHall.hall
     }
 
 }

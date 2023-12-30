@@ -16,14 +16,14 @@ object ConvertDataInEntity {
         val(name, date, duration, row, place) = list
         val cinemaHall = Pair(row!!.toInt(), place!!.toInt())
 
-        return Ticket(name!!, LocalDateTime.parse(date, globalData.getFormatterDateTime),
+        return Ticket(name!!, LocalDateTime.parse(date, globalData.formatterDateTime),
             duration!!.toDouble(), cinemaHall.first, cinemaHall.second)
     }
 
     fun getCorrectSession(list: List<String?>): Any {
         val(name, date) = list
 
-        val movie = backendGlobalData.getDatabaseFilms.getListFilmsRead.filter { it.getName == name }.firstOrNull()
+        val movie = backendGlobalData.databaseFilms.getListFilmsRead.filter { it.name == name }.firstOrNull()
 
         try {
             if(movie == null) throw IncorrectExistenceFilm()
@@ -31,7 +31,7 @@ object ConvertDataInEntity {
             return e.message
         }
 
-        return Session(movie, LocalDateTime.parse(date, globalData.getFormatterDateTime))
+        return Session(movie, LocalDateTime.parse(date, globalData.formatterDateTime))
     }
 
     fun getCorrectMovie(list: List<String?>): Movie {

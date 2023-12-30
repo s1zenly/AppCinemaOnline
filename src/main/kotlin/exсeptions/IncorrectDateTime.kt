@@ -8,6 +8,6 @@ class IncorrectDateTime(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("That time has already passed") + "\n"
 }

@@ -7,12 +7,12 @@ import ru.hse.sema.homework.backend.model.data.Session
 object CinemaHandler {
 
     fun ticketRequest(action: ActionsCinema, data: List<String?>): Pair<Any?, String?> {
-        val ticket = backendGlobalData.getConverterDataInEntity.getCorrectTicket(data)
+        val ticket = backendGlobalData.converterDataInEntity.getCorrectTicket(data)
 
         val answerManager = when(action) {
-            ActionsCinema.BUY_TICKET -> backendGlobalData.getTicketManager.addTicket(ticket)
-            ActionsCinema.RETURN_TICKET -> backendGlobalData.getTicketManager.removeTicket(ticket)
-            ActionsCinema.MARK_CUSTOMER -> backendGlobalData.getTicketManager.markCustomer(ticket)
+            ActionsCinema.BUY_TICKET -> backendGlobalData.ticketManager.addTicket(ticket)
+            ActionsCinema.RETURN_TICKET -> backendGlobalData.ticketManager.removeTicket(ticket)
+            ActionsCinema.MARK_CUSTOMER -> backendGlobalData.ticketManager.markCustomer(ticket)
 
             else -> TODO()
         }
@@ -26,20 +26,20 @@ object CinemaHandler {
         var sessionSecond: Any? = null
 
         if(action == ActionsCinema.CHANGE_SESSION) {
-            sessionFirst = backendGlobalData.getConverterDataInEntity.getCorrectSession(data.subList(0, data.size / 2))
-            sessionSecond = backendGlobalData.getConverterDataInEntity.getCorrectSession(data.subList(data.size / 2, data.size))
+            sessionFirst = backendGlobalData.converterDataInEntity.getCorrectSession(data.subList(0, data.size / 2))
+            sessionSecond = backendGlobalData.converterDataInEntity.getCorrectSession(data.subList(data.size / 2, data.size))
             if(sessionFirst is String) return Pair(null, sessionFirst.toString())
             if(sessionSecond is String) return Pair(null, sessionSecond.toString())
 
         } else {
-            session = backendGlobalData.getConverterDataInEntity.getCorrectSession(data)
+            session = backendGlobalData.converterDataInEntity.getCorrectSession(data)
             if(session is String) return Pair(null, session.toString())
         }
 
         val answerManager = when(action) {
-            ActionsCinema.ADD_SESSION -> backendGlobalData.getSessionManager.createSession(session as Session)
-            ActionsCinema.REMOVE_SESSION -> backendGlobalData.getSessionManager.deleteSession(session as Session)
-            ActionsCinema.CHANGE_SESSION -> backendGlobalData.getSessionManager.changeSession(sessionFirst as Session, sessionSecond as Session)
+            ActionsCinema.ADD_SESSION -> backendGlobalData.sessionManager.createSession(session as Session)
+            ActionsCinema.REMOVE_SESSION -> backendGlobalData.sessionManager.deleteSession(session as Session)
+            ActionsCinema.CHANGE_SESSION -> backendGlobalData.sessionManager.changeSession(sessionFirst as Session, sessionSecond as Session)
 
             else -> TODO()
         }
@@ -49,11 +49,11 @@ object CinemaHandler {
     }
 
     fun movieRequest(action: ActionsCinema, data: List<String?>): Pair<Any?, String?> {
-        val movie = backendGlobalData.getConverterDataInEntity.getCorrectMovie(data)
+        val movie = backendGlobalData.converterDataInEntity.getCorrectMovie(data)
 
         val answerManager = when(action) {
-            ActionsCinema.ADD_FILM -> backendGlobalData.getMovieManager.addFilms(movie)
-            ActionsCinema.REMOVE_FILM -> backendGlobalData.getMovieManager.deleteFilms(movie)
+            ActionsCinema.ADD_FILM -> backendGlobalData.movieManager.addFilms(movie)
+            ActionsCinema.REMOVE_FILM -> backendGlobalData.movieManager.deleteFilms(movie)
 
             else -> TODO()
         }
@@ -62,14 +62,14 @@ object CinemaHandler {
     }
 
     fun cinemaHallRequest(action: ActionsCinema, data: List<String?>): Pair<Any?, String?> {
-        var session = backendGlobalData.getConverterDataInEntity.getCorrectSession(data)
+        var session = backendGlobalData.converterDataInEntity.getCorrectSession(data)
 
         if(session is String) return Pair(null, session.toString())
 
-        session = backendGlobalData.getDatabaseSessions.getListSessionRead.filter { it == session }.first()
+        session = backendGlobalData.databaseSessions.getListSessionRead.filter { it == session }.first()
 
         val answerManager = when(action) {
-            ActionsCinema.DISPLAY_HALL -> backendGlobalData.getCinemaHallManager.displayHall(session)
+            ActionsCinema.DISPLAY_HALL -> backendGlobalData.cinemaHallManager.displayHall(session)
 
             else -> TODO()
         }
@@ -79,16 +79,16 @@ object CinemaHandler {
 
     fun databaseRequest(action: ActionsCinema, data: List<String?>?): Pair<Any?, String?> {
         val answerManager = when(action) {
-            ActionsCinema.GET_LIST_SESSIONS -> backendGlobalData.getDatabaseManager.getListSession()
-            ActionsCinema.GET_LIST_MOVIES -> backendGlobalData.getDatabaseManager.getListMovies()
+            ActionsCinema.GET_LIST_SESSIONS -> backendGlobalData.databaseManager.getListSession()
+            ActionsCinema.GET_LIST_MOVIES -> backendGlobalData.databaseManager.getListMovies()
             ActionsCinema.GET_LIST_TICKETS -> {
-                var session = backendGlobalData.getConverterDataInEntity.getCorrectSession(data!!)
+                var session = backendGlobalData.converterDataInEntity.getCorrectSession(data!!)
 
                 if(session is String) return Pair(null, session.toString())
 
-                session = backendGlobalData.getDatabaseSessions.getListSessionRead.filter { it.equals(session) }.first()
+                session = backendGlobalData.databaseSessions.getListSessionRead.filter { it.equals(session) }.first()
 
-                backendGlobalData.getDatabaseManager.getListTickets(session)
+                backendGlobalData.databaseManager.getListTickets(session)
             }
 
             else -> TODO()

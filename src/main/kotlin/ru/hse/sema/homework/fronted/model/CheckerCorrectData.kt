@@ -88,10 +88,10 @@ object CheckerCorrectData {
 
     private fun checkCorrectFormatDate(date: String?): String? {
         val dataTimeCorrect = try {
-            LocalDateTime.parse(date, globalData.getFormatterDateTime)
+            LocalDateTime.parse(date, globalData.formatterDateTime)
             null
         } catch (e: DateTimeParseException) {
-            globalData.getColorRedHead + "Incorrect time format\n" + globalData.getColorTail
+            globalData.COLOR_RED_HEAD + "Incorrect time format\n" + globalData.COLOR_TAIL
         }
 
         return dataTimeCorrect
@@ -162,7 +162,7 @@ object CheckerCorrectData {
 
     private fun checkCorrectCommand(command: String?): String? {
         val commandCorrect = try {
-            if(command?.toIntOrNull() == null || (command.toInt() > globalData.getCountCommand
+            if(command?.toIntOrNull() == null || (command.toInt() > globalData.COUNT_COMMAND
                         && command.toInt() < 1)) {
                 throw IncorrectCommand()
             }

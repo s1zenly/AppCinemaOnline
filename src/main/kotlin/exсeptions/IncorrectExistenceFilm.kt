@@ -7,6 +7,6 @@ class IncorrectExistenceFilm(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("The movie isn't in the database") + "\n"
 }

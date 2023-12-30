@@ -8,6 +8,6 @@ class IncorrectPlaceCinema(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("There isn't such seat in the hall") + "\n"
 }

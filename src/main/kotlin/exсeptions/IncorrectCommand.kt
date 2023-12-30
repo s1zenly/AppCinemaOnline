@@ -7,6 +7,6 @@ class IncorrectCommand(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("You input incorrect command") + "\n"
 }

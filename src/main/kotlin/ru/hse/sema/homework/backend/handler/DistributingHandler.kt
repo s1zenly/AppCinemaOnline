@@ -9,20 +9,20 @@ object DistributingHandler {
         val result = when(action) {
             ActionsCinema.BUY_TICKET,
             ActionsCinema.RETURN_TICKET,
-            ActionsCinema.MARK_CUSTOMER -> backendGlobalData.getCinemaHandler.ticketRequest(action, data!!)
+            ActionsCinema.MARK_CUSTOMER -> backendGlobalData.cinemaHandler.ticketRequest(action, data!!)
 
             ActionsCinema.ADD_FILM,
-            ActionsCinema.REMOVE_FILM,-> backendGlobalData.getCinemaHandler.movieRequest(action, data!!)
+            ActionsCinema.REMOVE_FILM,-> backendGlobalData.cinemaHandler.movieRequest(action, data!!)
 
             ActionsCinema.ADD_SESSION,
             ActionsCinema.REMOVE_SESSION,
-            ActionsCinema.CHANGE_SESSION -> backendGlobalData.getCinemaHandler.sessionRequest(action, data!!)
+            ActionsCinema.CHANGE_SESSION -> backendGlobalData.cinemaHandler.sessionRequest(action, data!!)
 
             ActionsCinema.GET_LIST_SESSIONS,
             ActionsCinema.GET_LIST_MOVIES,
-            ActionsCinema.GET_LIST_TICKETS -> backendGlobalData.getCinemaHandler.databaseRequest(action, data)
+            ActionsCinema.GET_LIST_TICKETS -> backendGlobalData.cinemaHandler.databaseRequest(action, data)
 
-            ActionsCinema.DISPLAY_HALL -> backendGlobalData.getCinemaHandler.cinemaHallRequest(action, data!!)
+            ActionsCinema.DISPLAY_HALL -> backendGlobalData.cinemaHandler.cinemaHallRequest(action, data!!)
 
         }
 

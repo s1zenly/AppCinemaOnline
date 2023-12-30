@@ -10,38 +10,13 @@ import ru.hse.sema.homework.fronted.view.ViewMenuCapabilities
 import ru.hse.sema.homework.fronted.view.ViewResult
 
 object FrontedSingletonData {
-    private val clientInfoReader: ClientInfoReader = ClientInfoReader
-    private val checkerCorrectData: CheckerCorrectData = CheckerCorrectData
-    private val converterData: ConverterData =ConverterData
-    private val viewMenuCapabilities: ViewMenuCapabilities  = ViewMenuCapabilities
-    private val viewResult: ViewResult = ViewResult
-    private val distributingHandler: DistributingHandler = DistributingHandler
-    private val viewCinemaHall: ViewCinemaHall = ViewCinemaHall
-    private val viewList: ViewList = ViewList
+    val clientInfoReader: ClientInfoReader = ClientInfoReader
+    val checkerCorrectData: CheckerCorrectData = CheckerCorrectData
+    val converterData: ConverterData =ConverterData
+    val viewMenuCapabilities: ViewMenuCapabilities  = ViewMenuCapabilities
+    val viewResult: ViewResult = ViewResult
+    val distributingHandler: DistributingHandler = DistributingHandler
+    val viewCinemaHall: ViewCinemaHall = ViewCinemaHall
+    val viewList: ViewList = ViewList
 
-
-    val getClientInfoReader: ClientInfoReader
-        get() = clientInfoReader
-
-    val getCheckerCorrectData: CheckerCorrectData
-        get() = checkerCorrectData
-
-    val getConverterData: ConverterData
-        get() = converterData
-
-    val getViewMenuCapabilities: ViewMenuCapabilities
-        get() = viewMenuCapabilities
-
-    val getViewResult: ViewResult
-        get() = viewResult
-
-    val getDistributingHandler: DistributingHandler
-        get() = distributingHandler
-
-    val getViewCinemaHall: ViewCinemaHall
-        get() = viewCinemaHall
-
-
-    val getViewList: ViewList
-        get() = viewList
 }

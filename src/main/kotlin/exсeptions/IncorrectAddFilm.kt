@@ -8,6 +8,6 @@ class IncorrectAddFilm(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("The film is already in the database") + "\n"
 }

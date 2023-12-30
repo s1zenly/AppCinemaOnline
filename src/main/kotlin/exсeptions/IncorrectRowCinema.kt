@@ -8,6 +8,6 @@ class IncorrectRowCinema(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("There isn't such row in the hall") + "\n"
 }

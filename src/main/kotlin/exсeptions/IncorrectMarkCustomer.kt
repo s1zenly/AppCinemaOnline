@@ -8,6 +8,6 @@ class IncorrectMarkCustomer(
 ) : Exception(cause){
 
     override val message: String
-        get() = backendGlobalData.getViewColorText.
+        get() = backendGlobalData.viewColorText.
         viewRedText("The ticket hasn't been purchased") + "\n"
 }
