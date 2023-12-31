@@ -3,13 +3,17 @@ package ru.hse.sema.homework.backend.handler
 import actions.ActionsCinema
 import actions.ActionsSystem
 import ru.hse.sema.homework.backend.backendGlobalData
+import ru.hse.sema.homework.backend.model.interfaces.IThreadRun
 
 /**
  * Global backend handler
  */
-object DistributingHandler {
+object DistributingHandler : IThreadRun {
+
+    override var isRunning: Boolean = false
 
     fun distributingRequest(action: ActionsCinema, data: List<String?>?): Pair<Any?, String?> {
+        runDaemonThreads()
         val result = when(action) {
             ActionsCinema.BUY_TICKET,
             ActionsCinema.RETURN_TICKET,
@@ -37,5 +41,9 @@ object DistributingHandler {
         when(action) {
             ActionsSystem.DELETE_FILES -> backendGlobalData.systemHandler.deleteFilesRequest()
         }
+    }
+
+    private fun runDaemonThreads() {
+        if(!isRunning) backendGlobalData.daemonThreadManager.start()
     }
 }

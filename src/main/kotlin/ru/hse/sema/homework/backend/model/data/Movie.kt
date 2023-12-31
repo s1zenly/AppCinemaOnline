@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 data class Movie(
     val name: String,
     val style: String,
-    val duration: Double,
+    val duration: Int,
     val info: String?
 ) {
 

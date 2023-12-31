@@ -21,7 +21,7 @@ data class Session(
 
 
     @JsonGetter("end_time") fun getTimeEnd(): LocalDateTime {
-        return date.plusHours((movie.duration / 1).toLong()).plusMinutes((movie.duration % 1 * 100).toLong())
+        return date.plusHours((movie.duration / 60).toLong()).plusMinutes((movie.duration % 60).toLong())
     }
 
     override fun toString(): String {

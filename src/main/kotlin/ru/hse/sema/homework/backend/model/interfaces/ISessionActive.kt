@@ -6,7 +6,4 @@ package ru.hse.sema.homework.backend.model.interfaces
 interface ISessionActive {
     var started: Boolean
 
-    fun hasMovieStarted(): Boolean {
-        return started
-    }
 }

@@ -19,7 +19,7 @@ object ConverterDataInEntity {
         val cinemaHall = Pair(row!!.toInt(), place!!.toInt())
 
         return Ticket(name!!, LocalDateTime.parse(date, globalData.formatterDateTime),
-            duration!!.toDouble(), cinemaHall.first, cinemaHall.second)
+            duration!!.toInt(), cinemaHall.first, cinemaHall.second)
     }
 
     fun getCorrectSession(list: List<String?>): Any {
@@ -39,7 +39,7 @@ object ConverterDataInEntity {
     fun getCorrectMovie(list: List<String?>): Movie {
         val(name, style, duration, info) = list
 
-        return Movie(name!!, style!!, duration!!.toDouble(), info)
+        return Movie(name!!, style!!, duration!!.toInt(), info)
     }
 
 }

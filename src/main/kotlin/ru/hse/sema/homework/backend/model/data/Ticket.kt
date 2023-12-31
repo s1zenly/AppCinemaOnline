@@ -7,7 +7,7 @@ import java.time.LocalDateTime
 data class Ticket(
     val movieName: String,
     val date: LocalDateTime,
-    val duration: Double,
+    val duration: Int,
     @JsonIgnore val row: Int,
     @JsonIgnore val place: Int
 ) : IBuyTicket {

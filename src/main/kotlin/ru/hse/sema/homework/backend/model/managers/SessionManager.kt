@@ -1,5 +1,6 @@
 package ru.hse.sema.homework.backend.model.managers
 
+import exсeptions.IncorrectAddSession
 import exсeptions.IncorrectCreateSession
 import exсeptions.IncorrectDateTime
 import exсeptions.IncorrectExistenceSession
@@ -20,6 +21,7 @@ object SessionManager {
         val result = try {
 
             if(!checkCorrectSession(session)) throw  IncorrectDateTime()
+            if(checkSession(session)) throw IncorrectAddSession()
             if(checkIntersectionSession(session)) throw IncorrectCreateSession()
 
             backendGlobalData.databaseSessions.getListSessionWrite.add(session)
@@ -30,6 +32,8 @@ object SessionManager {
             Pair(session, e.message)
         } catch (e: IncorrectDateTime) {
             Pair(session, e.message)
+        } catch (e: IncorrectAddSession) {
+            Pair(session, e.message)
         }
 
         return result
@@ -38,8 +42,7 @@ object SessionManager {
     fun deleteSession(session: Session): Pair<Session?, String?> {
         val result = try {
 
-            if(!checkCorrectSession(session)) throw IncorrectDateTime()
-            if(checkSession(session)) throw IncorrectExistenceSession()
+            if(!checkSession(session)) throw IncorrectExistenceSession()
 
             backendGlobalData.databaseSessions.getListSessionWrite.remove(session)
             serializationSessionList()

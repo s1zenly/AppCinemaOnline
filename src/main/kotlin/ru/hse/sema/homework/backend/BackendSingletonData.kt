@@ -4,6 +4,7 @@ import ru.hse.sema.homework.backend.handler.CinemaHandler
 import ru.hse.sema.homework.backend.handler.SystemHandler
 import ru.hse.sema.homework.backend.model.converter.ConverterDataInEntity
 import ru.hse.sema.homework.backend.model.converter.ConverterJson
+import ru.hse.sema.homework.backend.model.daemon.SessionCleanupThread
 import ru.hse.sema.homework.backend.model.data.LocalDateTimeSerializer
 import ru.hse.sema.homework.backend.model.database.DatabaseFilms
 import ru.hse.sema.homework.backend.model.database.DatabaseSessions
@@ -28,5 +29,8 @@ object BackendSingletonData {
     val localDateTimeSerializer: LocalDateTimeSerializer = LocalDateTimeSerializer
     val systemHandler: SystemHandler = SystemHandler
     val systemManager: SystemManager = SystemManager
+    val daemonThreadManager: DaemonThreadManager = DaemonThreadManager
+
+    val sessionCleanupThread = SessionCleanupThread
 
 }

@@ -105,8 +105,7 @@ object CheckerCorrectData {
 
     private fun checkCorrectDuration(duration: String?): String? {
         val durationCorrect = try {
-            if(duration?.toDoubleOrNull() == null || duration.split(".").size == 2 &&
-                duration.split(".")[1].toInt() > 60) {
+            if(duration?.toIntOrNull() == null || duration.toInt() <= 0) {
                 throw IncorrectFormatDuration()
             }
             null

@@ -8,7 +8,7 @@ object ClientInfoReader {
 
     private const val messageNameFilm: String = "Название фильма: "
     private const val messageDateFilm: String = "Время начала фильма(dd.MM.yyyy HH:mm): "
-    private const val messageDuration: String = "Длительность фильма(h.m, например 2 часа 50 мин = 2.5): "
+    private const val messageDuration: String = "Длительность фильма(мин): "
     private const val messageRow: String = "Ряд: "
     private const val messagePlace: String = "Место: "
     private const val messageRows: String = "Рядов: "
