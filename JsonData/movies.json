@@ -1,6 +1,6 @@
 [ {
   "name" : "Hello",
   "style" : "q",
-  "duration" : 1.1,
+  "duration" : 0.01,
   "info" : ""
 } ]

@@ -3,7 +3,7 @@ package ru.hse.sema.homework.fronted.view
 import ru.hse.sema.homework.backend.model.data.Movie
 import ru.hse.sema.homework.backend.model.data.Session
 import ru.hse.sema.homework.backend.model.data.Ticket
-import actionsCinema.ActionsCinema
+import actions.ActionsCinema
 import ru.hse.sema.homework.fronted.frontedGlobalDate
 
 /**

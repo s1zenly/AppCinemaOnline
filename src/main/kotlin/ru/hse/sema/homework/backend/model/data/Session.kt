@@ -1,15 +1,16 @@
 package ru.hse.sema.homework.backend.model.data
 
+import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonProperty
 import globalData
-import ru.hse.sema.homework.backend.model.`interface`.ISessionActive
+import ru.hse.sema.homework.backend.model.interfaces.ISessionActive
 import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 
 data class Session(
     val movie: Movie,
-    val date: LocalDateTime,
+    @get:JsonProperty("start_time") val date: LocalDateTime,
 
 ) : ISessionActive {
 
@@ -19,7 +20,7 @@ data class Session(
     @JsonIgnore override var started: Boolean = false
 
 
-    @JsonIgnore fun getTimeEnd(): LocalDateTime {
+    @JsonGetter("end_time") fun getTimeEnd(): LocalDateTime {
         return date.plusHours((movie.duration / 1).toLong()).plusMinutes((movie.duration % 1 * 100).toLong())
     }
 

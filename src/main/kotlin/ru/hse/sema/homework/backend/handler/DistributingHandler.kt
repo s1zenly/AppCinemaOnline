@@ -1,6 +1,7 @@
 package ru.hse.sema.homework.backend.handler
 
-import actionsCinema.ActionsCinema
+import actions.ActionsCinema
+import actions.ActionsSystem
 import ru.hse.sema.homework.backend.backendGlobalData
 
 /**
@@ -30,5 +31,11 @@ object DistributingHandler {
         }
 
         return result
+    }
+
+    fun systemRequest(action: ActionsSystem) {
+        when(action) {
+            ActionsSystem.DELETE_FILES -> backendGlobalData.systemHandler.deleteFilesRequest()
+        }
     }
 }

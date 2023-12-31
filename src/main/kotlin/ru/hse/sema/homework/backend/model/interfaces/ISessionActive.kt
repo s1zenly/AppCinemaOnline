@@ -1,4 +1,4 @@
-package ru.hse.sema.homework.backend.model.`interface`
+package ru.hse.sema.homework.backend.model.interfaces
 
 /**
  * Checking for the beginning of the movie

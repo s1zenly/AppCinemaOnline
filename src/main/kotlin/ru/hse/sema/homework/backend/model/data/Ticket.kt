@@ -1,9 +1,8 @@
 package ru.hse.sema.homework.backend.model.data
 
 import com.fasterxml.jackson.annotation.JsonIgnore
-import ru.hse.sema.homework.backend.model.`interface`.IBuyTicket
+import ru.hse.sema.homework.backend.model.interfaces.IBuyTicket
 import java.time.LocalDateTime
-import kotlin.time.Duration
 
 data class Ticket(
     val movieName: String,

@@ -1,4 +1,5 @@
 import ru.hse.sema.homework.fronted.handler.CustomerHandler
+import ru.hse.sema.homework.fronted.handler.SystemRequestHandler
 import ru.hse.sema.homework.fronted.handler.ServerRequestHandler
 import java.time.format.DateTimeFormatter
 
@@ -16,7 +17,7 @@ object GlobalSingletonData {
     const val FILE_NAME_SESSIONS: String = "sessions.json"
     const val FILE_NAME_TICKETS: String = "tickets.json"
 
-
+    val systemRequestHandler: SystemRequestHandler = SystemRequestHandler
     val serverRequestHandler: ServerRequestHandler = ServerRequestHandler
     val customerHandler: CustomerHandler = CustomerHandler
     val formatterDateTime = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")!!

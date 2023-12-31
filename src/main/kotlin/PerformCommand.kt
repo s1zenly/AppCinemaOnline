@@ -1,4 +1,4 @@
-import actionsCinema.ActionsCinema
+import actions.ActionsCinema
 
 
 /**

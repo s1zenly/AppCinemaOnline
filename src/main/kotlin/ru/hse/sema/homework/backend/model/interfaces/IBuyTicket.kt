@@ -1,4 +1,4 @@
-package ru.hse.sema.homework.backend.model.`interface`
+package ru.hse.sema.homework.backend.model.interfaces
 
 /**
  * Checks if the ticket has been purchased

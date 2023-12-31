@@ -2,8 +2,9 @@
   "movie" : {
     "name" : "Hello",
     "style" : "q",
-    "duration" : 1.1,
+    "duration" : 0.01,
     "info" : ""
   },
-  "date" : "24.12.2024 12:14"
+  "start_time" : "12.12.2024 12:12",
+  "end_time" : "12.12.2024 12:13"
 } ]

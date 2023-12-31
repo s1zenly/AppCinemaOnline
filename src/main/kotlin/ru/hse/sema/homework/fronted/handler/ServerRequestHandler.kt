@@ -1,6 +1,6 @@
 package ru.hse.sema.homework.fronted.handler
 
-import actionsCinema.ActionsCinema
+import actions.ActionsCinema
 import ru.hse.sema.homework.fronted.frontedGlobalDate
 
 
@@ -88,4 +88,5 @@ object ServerRequestHandler {
             frontedGlobalDate.viewResult.view(action, result.first)
         }
     }
+
 }

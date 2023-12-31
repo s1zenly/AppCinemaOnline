@@ -12,7 +12,7 @@ import java.time.LocalDateTime
 /**
  * Converts a list of data into an object
  */
-object ConvertDataInEntity {
+object ConverterDataInEntity {
 
     fun getCorrectTicket(list: List<String?>): Ticket {
         val(name, date, duration, row, place) = list

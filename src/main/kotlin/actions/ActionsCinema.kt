@@ -1,4 +1,4 @@
-package actionsCinema
+package actions
 
 /**
  * Options cinema

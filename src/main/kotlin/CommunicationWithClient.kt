@@ -22,6 +22,8 @@ fun communicate() {
     globalData.customerHandler.commandHandler()
 
     end()
+
+    globalData.systemRequestHandler.filesDeleteHandler()
 }
 
 

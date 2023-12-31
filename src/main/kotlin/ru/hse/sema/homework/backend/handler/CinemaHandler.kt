@@ -1,6 +1,6 @@
 package ru.hse.sema.homework.backend.handler
 
-import actionsCinema.ActionsCinema
+import actions.ActionsCinema
 import exсeptions.IncorrectDatabaseIsEmpty
 import exсeptions.IncorrectExistenceSession
 import ru.hse.sema.homework.backend.backendGlobalData
