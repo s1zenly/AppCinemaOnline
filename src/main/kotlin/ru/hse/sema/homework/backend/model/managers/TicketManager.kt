@@ -65,7 +65,9 @@ object TicketManager {
 
         val answer = try {
             if (session == null) throw IncorrectExistenceSession()
-            if (!session.ticketList.find { it: Ticket -> ticket.equals(it) }!!.sold) throw IncorrectMarkCustomer()
+            val foundTicket = session.ticketList.find { it: Ticket -> ticket.equals(it) }
+            if(foundTicket == null) throw IncorrectMarkCustomer()
+            if (foundTicket.sold) throw IncorrectMarkCustomer()
 
             Pair(backendGlobalData.cinemaHallManager.markSeatTaken(ticket, session, Colors.YELLOW), null)
         } catch (e: IncorrectExistenceSession) {
